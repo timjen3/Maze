@@ -1,0 +1,56 @@
+'''
+This module stores the classes
+that will: build the dungeon
+& create monsters
+'''
+
+'BEGIN CLASS DEFINITIONS'
+class Dungeon(object):
+    def __init__(self):
+        self._dungeon = []; 'floors in the dungeon'
+
+class Floor(object):
+##Simple functions##
+    'Return Total Gold on Floor'
+    def get_Tot_Gold(self, floor):
+        for rooms in self._Floor[floor]:
+            x = self._Floor[0];
+            y = self._Floor[1];
+            _tot_Gold = tot_Gold + getGold(x,y);
+            return _tot_Gold;
+
+##Class main Functions##
+    'Class Constructor'
+    def __init__(self):
+        self._Floor = _Floor = []; 'A floor is a list of rooms'
+        x = y = 0;
+        for x_loop in range(1,16):
+            for y_loop in range(1,16):
+                self.add_Rooms(x,y);
+                self.place_Gold(x,y,10);
+                    
+    'Add Room'
+    def add_Rooms(self, X, Y):
+        self._Floor[X,Y] = {};
+        self._Floor[X,Y]['Exists'] = 'Y';
+        self._Floor[X,Y]['Gold'] = 0;
+        self._Floor[X,Y]['Desc'] = '';
+        
+    def place_Gold(self, X, Y, gold):
+        self._Floor[X,Y]['Gold'] = gold;
+
+    def get_Gold(self, X, Y):
+        return self._Floor[X,Y]['Gold'];
+
+'main Function'            
+def main():
+    GOLD = 15
+    cur_Floor = Floor();
+    
+    for x_loop in range(1,16):
+        for y_loop in range(1,16):
+            cur_Floor.add_Rooms(x_loop, y_loop);
+            cur_Floor.place_Gold(x_loop, y_loop, GOLD);
+    print(cur_Floor.get_Tot_Gold());
+    
+main();
