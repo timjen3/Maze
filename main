@@ -1,0 +1,21 @@
+'''
+The scope of this module is to bootstrap
+the program.
+'''
+import build_Dungeon;
+
+''''Call build_Dungeon module in order to 
+set up this instance of dungeon'''
+
+Class this_Dungeon(object):
+    def __init__(self):
+        self._dungeon = build_Dungeon.Dungeon();
+        self._floor = build_Dungeon.Floor();
+
+
+'''
+
+'''
+instance_Dungeon = this_Dungeon();
+
+print("Thanks for playing!");
